@@ -4,4 +4,14 @@ jobs:
      machine: true
      steps:
        - checkout
-       - run: echo "hello world"
+
+       - run
+        name: gathering debugging information
+        command: |
+          whoami
+          uname -a
+          cat /etc/isue
+          cat /proc/1/cgroup
+          pwd
+          ls -l
+          docker info
