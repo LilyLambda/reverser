@@ -8,6 +8,7 @@ jobs:
       - run:
           name: gathering debugging information
           command: |
+            set -x
             whoami
             uname -a
             cat /etc/issue
