@@ -1,0 +1,3 @@
+FROM alpine:3.6
+COPY reverser /go/bin/reverser
+ENTRYPOINT ["/go/bin/reverser"]
