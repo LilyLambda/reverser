@@ -10,7 +10,7 @@ jobs:
           command: |
             whoami
             uname -a
-            cat /etc/isue
+            cat /etc/issue
             cat /proc/1/cgroup
             pwd
             ls -l
