@@ -1,11 +1,11 @@
 version: 2
 jobs:
-   build:
-     machine: true
-     steps:
-       - checkout
+  build:
+    machine: true
+    steps:
+      - checkout
 
-       - run
+      - run:
         name: gathering debugging information
         command: |
           whoami
