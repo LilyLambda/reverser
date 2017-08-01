@@ -6,12 +6,12 @@ jobs:
       - checkout
 
       - run:
-        name: gathering debugging information
-        command: |
-          whoami
-          uname -a
-          cat /etc/isue
-          cat /proc/1/cgroup
-          pwd
-          ls -l
-          docker info
+          name: gathering debugging information
+          command: |
+            whoami
+            uname -a
+            cat /etc/isue
+            cat /proc/1/cgroup
+            pwd
+            ls -l
+            docker info
