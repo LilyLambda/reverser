@@ -10,7 +10,7 @@ COPY *.go /go/src/github.com/lilylambda/reverser/
 COPY cmd /go/src/github.com/lilylambda/reverser/cmd/
 COPY vendor /go/src/github.com/lilylambda/reverser/vendor/
 RUN go install \
-    github.com/lilylambda/reverser/reverser \
+    github.com/lilylambda/reverser \
     github.com/lilylambda/reverser/cmd/reverser
 
 ENTRYPOINT ["/go/bin/reverser"]
