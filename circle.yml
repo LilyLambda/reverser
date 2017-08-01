@@ -15,3 +15,15 @@ jobs:
             pwd
             ls -l
             docker info
+
+      - run:
+          name: build dev container
+          command: docker build -t reverser-dev .
+
+      - run:
+          name: build prod container
+          command: echo todo
+
+      - run:
+          name: test dev container
+          command: docker run --entrypoint=go reverser-dev test -tags="fast pure" -v github.com/lilylambda/reverser
