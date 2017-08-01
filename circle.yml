@@ -22,7 +22,10 @@ jobs:
 
       - run:
           name: build prod container
-          command: echo todo
+          command: |
+            docker cp $(docker create reverser-dev):/go/bin/reverser .
+            docker build -f Dockerfile.prod -t reverser-prod .
+            if [ $(docker run reverser-prod hello) != olleh ]; then exit 1; fi;
 
       - run:
           name: test dev container
