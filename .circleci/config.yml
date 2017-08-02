@@ -51,5 +51,7 @@ jobs:
 
       - run:
           name: test dev container
-          command: docker run --entrypoint=go reverser-dev test -tags="fast pure" -v github.com/lilylambda/reverser
+          command: |
+            docker run --entrypoint=go reverser-dev test -coverprofile=coverage.txt -covermode=atomic -tags="fast pure" -v github.com/lilylambda/reverser
+            bash <(curl -s https://codecov.io/bash)
 
