@@ -1,4 +1,4 @@
-# reverser
+# reverser - [![CircleCI](https://circleci.com/gh/LilyLambda/reverser.svg?style=svg&circle-token=eed3aa531adffca69a3011ceaf9f9b5cba953178)](https://circleci.com/gh/LilyLambda/reverser)
 
 Revolutionary String Reversing.
 
