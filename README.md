@@ -4,6 +4,8 @@ Revolutionary String Reversing.
 
 Source code for a talk "Docker for Painless & Reliable Continuous Integration" given on August 2, 2017.
 
+See [the wiki](https://github.com/LilyLambda/reverser/wiki) for an outline of the talk.
+
 ## Build & run with Docker
 
 - Install Docker
