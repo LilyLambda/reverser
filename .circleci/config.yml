@@ -23,7 +23,7 @@ jobs:
 
       - run:
           name: log into dockerhub.com
-          command: docker login -u $DOCKER_UNAME -p $DOCKER_PASSWORD
+          command: docker login -u $DOCKER_UNAME -p $DOCKER_PASSWORD # these variables are added via the CircleCI UI
 
       - run:
           name: push dev container
