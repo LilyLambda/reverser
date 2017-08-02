@@ -42,7 +42,8 @@ jobs:
             if [ $(docker run reverser-prod hello) != olleh ]; then exit 1; fi;
 
       - run:
-          name: push prod container |
+          name: push prod container
+          command: |
             set -x
             PROD_CONTAINER=dockerhub.com/lilylambda:${CIRCLE_SHA1}-prod
             docker tag reverser-prod $PROD_CONTAINER
