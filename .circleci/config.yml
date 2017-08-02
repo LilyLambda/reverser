@@ -9,12 +9,12 @@ jobs:
           name: gathering debugging information
           command: |
             set -x
+            pwd
+            ls -l
             whoami
             uname -a
             cat /etc/issue
             cat /proc/1/cgroup
-            pwd
-            ls -l
             go version
             docker info
 
