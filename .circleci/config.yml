@@ -15,6 +15,7 @@ jobs:
             cat /proc/1/cgroup
             pwd
             ls -l
+            go version
             docker info
 
       - run:
