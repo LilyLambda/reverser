@@ -59,6 +59,8 @@ jobs:
             cat test-report.txt | go-junit-report > test-report.xml
             cat test-report.txt
             cat test-report.xml
+            mkdir junit
+            cp test-report.xml junit
             docker cp $ID:/go/src/github.com/lilylambda/reverser/coverage.txt .
             cat coverage.txt
             bash <(curl -s https://codecov.io/bash)
@@ -73,5 +75,5 @@ jobs:
           path: /home/circleci/project/test-report.xml
 
       - store_test_results:
-          path: /home/circleci/project/test-report.xml
+          path: /home/circleci/project/junit
 
