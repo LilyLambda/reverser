@@ -59,3 +59,6 @@ jobs:
             cat coverage.txt
             bash <(curl -s https://codecov.io/bash)
 
+      - store_artifacts:
+          path: /home/circleci/project/coverage.txt
+
