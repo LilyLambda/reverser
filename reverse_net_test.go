@@ -3,11 +3,11 @@
 package reverser
 
 import (
+	"github.com/stretchr/testify/assert"
 	"io/ioutil"
 	"net/http"
-	"testing"
 	"strings"
-	"github.com/stretchr/testify/assert"
+	"testing"
 )
 
 func TestGoogleRobots(t *testing.T) {
