@@ -22,6 +22,17 @@ jobs:
           command: docker build -t reverser-dev .
 
       - run:
+          name: log into dockerhub.com
+          command: docker login -u $DOCKER_UNAME -p $DOCKER_PASSWORD
+
+      - run:
+          name: push dev container
+          command: |
+            DEV_CONTAINER=dockerhub.com/lilylambda:${CIRCLE_SHA1}-dev
+            docker tag reverser-dev $DEV_CONTAINER
+            docker push $DEV_CONTAINER
+
+      - run:
           name: build prod container
           command: |
             docker cp $(docker create reverser-dev):/go/bin/reverser .
@@ -29,5 +40,12 @@ jobs:
             if [ $(docker run reverser-prod hello) != olleh ]; then exit 1; fi;
 
       - run:
+          name: push prod container |
+            PROD_CONTAINER=dockerhub.com/lilylambda:${CIRCLE_SHA1}-prod
+            docker tag reverser-prod $PROD_CONTAINER
+            docker push $PROD_CONTAINER
+
+      - run:
           name: test dev container
           command: docker run --entrypoint=go reverser-dev test -tags="fast pure" -v github.com/lilylambda/reverser
+
