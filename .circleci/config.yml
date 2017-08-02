@@ -28,6 +28,7 @@ jobs:
       - run:
           name: push dev container
           command: |
+            set -x
             DEV_CONTAINER=dockerhub.com/lilylambda:${CIRCLE_SHA1}-dev
             docker tag reverser-dev $DEV_CONTAINER
             docker push $DEV_CONTAINER
@@ -35,12 +36,14 @@ jobs:
       - run:
           name: build prod container
           command: |
+            set -x
             docker cp $(docker create reverser-dev):/go/bin/reverser .
             docker build -f Dockerfile.prod -t reverser-prod .
             if [ $(docker run reverser-prod hello) != olleh ]; then exit 1; fi;
 
       - run:
           name: push prod container |
+            set -x
             PROD_CONTAINER=dockerhub.com/lilylambda:${CIRCLE_SHA1}-prod
             docker tag reverser-prod $PROD_CONTAINER
             docker push $PROD_CONTAINER
