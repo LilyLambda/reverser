@@ -29,7 +29,7 @@ jobs:
           name: push dev container
           command: |
             set -x
-            DEV_CONTAINER=dockerhub.com/lilylambda:${CIRCLE_SHA1}-dev
+            DEV_CONTAINER=lilylambda/reverser:${CIRCLE_SHA1}-dev
             docker tag reverser-dev $DEV_CONTAINER
             docker push $DEV_CONTAINER
 
@@ -45,7 +45,7 @@ jobs:
           name: push prod container
           command: |
             set -x
-            PROD_CONTAINER=dockerhub.com/lilylambda:${CIRCLE_SHA1}-prod
+            PROD_CONTAINER=lilylambda/reverser:${CIRCLE_SHA1}-prod
             docker tag reverser-prod $PROD_CONTAINER
             docker push $PROD_CONTAINER
 
