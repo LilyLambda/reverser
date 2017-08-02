@@ -72,3 +72,6 @@ jobs:
       - store_artifacts:
           path: /home/circleci/project/test-report.xml
 
+      - store_test_results:
+          path: /home/circleci/project/test-report.xml
+
