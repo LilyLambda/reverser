@@ -53,13 +53,22 @@ jobs:
       - run:
           name: test dev container
           command: |
+            go get -u github.com/jstemmer/go-junit-report
             ID=$(docker create --entrypoint=go reverser-dev test -tags="fast pure" -v github.com/lilylambda/reverser -coverprofile=coverage.txt)
-            docker start -a $ID
+            docker start -a $ID 2>&1 > test-report.txt
+            cat test-report.txt | go-junit-report > test-report.xml
+            cat test-report.txt
+            cat test-report.xml
             docker cp $ID:/go/src/github.com/lilylambda/reverser/coverage.txt .
-            ls -l
             cat coverage.txt
             bash <(curl -s https://codecov.io/bash)
 
       - store_artifacts:
           path: /home/circleci/project/coverage.txt
+
+      - store_artifacts:
+          path: /home/circleci/project/test-report.txt
+
+      - store_artifacts:
+          path: /home/circleci/project/test-report.xml
 
