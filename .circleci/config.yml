@@ -55,5 +55,7 @@ jobs:
             ID=$(docker create --entrypoint=go reverser-dev test -tags="fast pure" -v github.com/lilylambda/reverser -coverprofile=profile.txt)
             docker start -a $ID
             docker cp $ID:/go/src/github.com/lilylambda/reverser/profile.txt .
+            ls -l
+            cat profile.txt
             bash <(curl -s https://codecov.io/bash)
 
