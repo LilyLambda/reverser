@@ -1,4 +1,4 @@
-# reverser - [![CircleCI](https://circleci.com/gh/LilyLambda/reverser.svg?style=svg&circle-token=eed3aa531adffca69a3011ceaf9f9b5cba953178)](https://circleci.com/gh/LilyLambda/reverser) [![Go Report Card](https://goreportcard.com/badge/github.com/lilylambda/reverser)](https://goreportcard.com/report/github.com/lilylambda/reverser)
+# reverser - [![CircleCI](https://circleci.com/gh/LilyLambda/reverser.svg?style=svg&circle-token=eed3aa531adffca69a3011ceaf9f9b5cba953178)](https://circleci.com/gh/LilyLambda/reverser) [![Go Report Card](https://goreportcard.com/badge/github.com/lilylambda/reverser)](https://goreportcard.com/report/github.com/lilylambda/reverser) [![GoDoc](https://godoc.org/github.com/lilylambda/reverser?status.svg)](http://godoc.org/github.com/lilylambda/reverser)
 
 Revolutionary String Reversing.
 
