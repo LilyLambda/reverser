@@ -6,6 +6,8 @@ Source code for a talk "Docker for Painless & Reliable Continuous Integration" g
 
 See [the wiki](https://github.com/LilyLambda/reverser/wiki) for an outline of the talk.
 
+Docker containers are [on Docker Hub](https://hub.docker.com/r/lilylambda/reverser/).
+
 ## Build & run with Docker
 
 - Install Docker
