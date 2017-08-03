@@ -24,6 +24,10 @@ Docker containers are [on Docker Hub](https://hub.docker.com/r/lilylambda/revers
 
 - Install Go, making sure to set `$GOROOT` and `$GOPATH` correctly.
 
+- Install dependencies:
+
+        $ go get -u "github.com/stretchr/testify/assert"
+
 - Build & run:
 
         $ cd reverser/
